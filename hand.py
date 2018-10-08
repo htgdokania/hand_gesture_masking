@@ -5,6 +5,7 @@ cap=cv2.VideoCapture(0)
 
 while True:
     ret,frame=cap.read()
+    
     hsv=cv2.cvtColor(frame,cv2.COLOR_BGR2HSV)
     low_skin=np.array([0,30,60])
     up_skin=np.array([20,150,255])
@@ -14,7 +15,7 @@ while True:
 
 ##    cv2.imshow('res',result)
 ##    cv2.imshow('frame',frame)
-    cv2.imshow('mask',mask)
+##    cv2.imshow('mask',mask)
     cv2.imshow('blur',blur)
 
     if cv2.waitKey(1) & 0xFF==ord('q'):
